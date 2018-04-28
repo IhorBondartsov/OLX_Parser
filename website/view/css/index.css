@@ -1,0 +1,17 @@
+img.centralImg {
+    display: block;
+    margin: 10% auto 5%;
+}
+
+.welcome{
+    margin: auto auto 4%;
+}
+
+.myBlue{
+    color: rgb(12, 130, 247);
+}
+
+.myBlueButton:hover{
+    border-color: rgb(12, 130, 247);
+    background-color: rgb(12, 130, 247);
+}
