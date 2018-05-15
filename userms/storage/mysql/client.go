@@ -46,14 +46,22 @@ const (
 )
 
 func (c *myClientMySQL) Create(user entities.User) error {
-
+	_, err := c.db.NamedExec(createUserStmt, user)
+	return err
 }
+
 func (c *myClientMySQL) Update(user entities.User) error {
-
+	_, err := c.db.NamedExec(updateUserStmtByID, user)
+	return err
 }
+
 func (c *myClientMySQL) Delete(userID int) error {
-
+	_, err := c.db.Query(deleteUserStmtByID, userID)
+	return err
 }
-func (c *myClientMySQL) GetUserByLogin(login string) (entities.User, error) {
 
+func (c *myClientMySQL) GetUserByLogin(login string) (entities.User, error) {
+	var user entities.User
+	err := c.db.Get(&user, getUserByID, login)
+	return user, err
 }
