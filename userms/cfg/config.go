@@ -1,9 +1,23 @@
 package cfg
 
+type SQL struct {
+	Password string
+	Login    string
+	Port     string
+}
+
 var (
-	Route = "127.0.0.1"
-	Port = 8001
-	PrivateKey = []byte(`-----BEGIN PRIVATE KEY-----
+	Storage = SQL{
+		Password: "",
+		Login:    "",
+		Port:     "3306",
+	}
+	//in second
+	TTLAcessToken   = 600
+	TTLRefradhToken = 10800
+	Route           = "127.0.0.1"
+	Port            = 8001
+	PrivateKey      = []byte(`-----BEGIN PRIVATE KEY-----
 MIIEpQIBAAKCAQEAwEXBRCwisurukRcgKDfTpEHlG0lZOjNgPiS3vDorVv5k8pk6
 iERM0Q5Bi9ok9RLEuIuxY10b5ODp5qtIXODhg3a/hNye1gaQ1a2JhixTC0DUxYL0
 GsaGlUdGd6I3jYxrSjUGFGCubbcllBFnu4BsLxLcy/3sm/ym5sL3aYgjbjB8j/R5

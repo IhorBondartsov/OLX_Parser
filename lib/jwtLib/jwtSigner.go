@@ -25,6 +25,12 @@ type rsaSigner struct {
 	privateKey *rsa.PrivateKey
 }
 
+
+// Sign - make token 
+// Params: 
+//			c - Claims with UserID
+//			t - token time to live
+// Rerturn: Token 
 func (s *rsaSigner) Sign(c Claims, t time.Duration) (string, error) {
 	c.StandardClaims = jwt.StandardClaims{
 		ExpiresAt: time.Now().Add(t).Unix(),
