@@ -71,6 +71,16 @@ func (a *API) Login(req LoginReq, resp *LoginResp) error {
 	return err
 }
 
+func (a *API) GetAcessToken(req AcessTokenRequest, resp *AcessTokenResponse) error {
+	token, err := a.RefreshStor.GetTokenByToken(req.RefreshToken)
+	if err != nil {
+		return err
+	}
+	claim := jwtLib.Claims{
+		ID: token.UserID,
+	}
+}
+
 func randStringBytesRmndr(n int) string {
 	b := make([]byte, n)
 	for i := range b {
