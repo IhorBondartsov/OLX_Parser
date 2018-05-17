@@ -14,7 +14,7 @@ var (
 	}
 	//in second
 	TTLAcessToken   = 600
-	TTLRefradhToken = 10800
+	TTLRefreshToken = 10800
 	Route           = "127.0.0.1"
 	Port            = 8001
 	PrivateKey      = []byte(`-----BEGIN PRIVATE KEY-----

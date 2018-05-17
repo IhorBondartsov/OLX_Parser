@@ -10,7 +10,7 @@ CREATE TABLE 'user' (
 CREATE TABLE 'refresh_token' (
 	'user_id' INT NOT NULL,
 	'token'  VARCHAR(512) NOT NULL,
-	'ttl' INT NOT NULL, 
+	'expiration_time' INT NOT NULL, 
 	FOREIGN KEY (user_id) REFERENCES user(id)
 ) 
 

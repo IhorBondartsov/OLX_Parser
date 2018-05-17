@@ -2,6 +2,8 @@ package webrpc
 
 import (
 	"math/rand"
+	"strconv"
+	"time"
 
 	"github.com/IhorBondartsov/OLX_Parser/userMS/cfg"
 	"github.com/IhorBondartsov/OLX_Parser/userms/entities"
@@ -47,8 +49,10 @@ type API struct {
 	AccessTokenSigner jwtLib.JWTSigner
 	UserStor          storage.Storage
 	RefreshStor       storage.RefreshToken
+	TTLAccessToken    time.Duration
 }
 
+// Login - check user in database if user is in databse then ganarate and return refrash token
 func (a *API) Login(req LoginReq, resp *LoginResp) error {
 	user, err := a.UserStor.GetUserByLogin(req.Login)
 	if err != nil {
@@ -58,9 +62,9 @@ func (a *API) Login(req LoginReq, resp *LoginResp) error {
 
 	token := randStringBytesRmndr(tokenLength)
 	tokenStruct := entities.Token{
-		Token:  token,
-		TTL:    cfg.TTLRefradhToken,
-		UserID: user.ID,
+		Token:          token,
+		ExpirationTime: time.Now().Add(time.Duration(cfg.TTLRefreshToken * time.Second)).Unix(),
+		UserID:         user.ID,
 	}
 	err = a.RefreshStor.SetToken(tokenStruct)
 	if err != nil {
@@ -71,14 +75,22 @@ func (a *API) Login(req LoginReq, resp *LoginResp) error {
 	return err
 }
 
+// GetAcessToken - create access token for user using refrash token
 func (a *API) GetAcessToken(req AcessTokenRequest, resp *AcessTokenResponse) error {
-	token, err := a.RefreshStor.GetTokenByToken(req.RefreshToken)
+	refToken, err := a.RefreshStor.GetTokenByToken(req.RefreshToken)
 	if err != nil {
+		log.Errorf("[GetAcessToken][GetTokenByToken] Error with database %v", err)
 		return err
 	}
 	claim := jwtLib.Claims{
-		ID: token.UserID,
+		ID: strconv.Itoa(refToken.UserID),
 	}
+	resp.AcessToken, err = a.AccessTokenSigner.Sign(claim, a.TTLAccessToken)
+	if err != nil {
+		log.Errorf("[GetAcessToken][Sign] Cant sign. Error %v", err)
+		return err
+	}
+	return nil
 }
 
 func randStringBytesRmndr(n int) string {

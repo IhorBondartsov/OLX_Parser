@@ -7,7 +7,7 @@ type User struct {
 }
 
 type Token struct {
-	UserID int    `db:"user_id"`
-	Token  string `db:"token"`
-	TTL    int    `db:"ttl"`
+	UserID         int    `db:"user_id"`
+	Token          string `db:"token"`
+	ExpirationTime int    `db:"expiration_time"`
 }
