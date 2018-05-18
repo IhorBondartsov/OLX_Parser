@@ -12,5 +12,6 @@ type Storage interface {
 type RefreshToken interface {
 	SetToken(token entities.Token) error
 	GetTokenByToken(token string) (entities.Token, error)
+	GetTokenByRange(from, to int64) ([]entities.Token, error)
 	DeleteToken(token entities.Token) error
 }

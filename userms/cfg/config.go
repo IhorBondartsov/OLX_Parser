@@ -4,13 +4,17 @@ type SQL struct {
 	Password string
 	Login    string
 	Port     string
+	Host     string
+	DBName   string
 }
 
 var (
 	Storage = SQL{
 		Password: "",
-		Login:    "",
+		Login:    "root",
 		Port:     "3306",
+		Host:     "127.0.0.1",
+		DBName:   "userMS",
 	}
 	//in second
 	TTLAcessToken   = 600
