@@ -61,9 +61,10 @@ func (a *API) Login(req LoginReq, resp *LoginResp) error {
 	}
 
 	token := randStringBytesRmndr(tokenLength)
+	t := time.Duration(cfg.TTLRefreshToken) * time.Second
 	tokenStruct := entities.Token{
 		Token:          token,
-		ExpirationTime: time.Now().Add(time.Duration(cfg.TTLRefreshToken * time.Second)).Unix(),
+		ExpirationTime: int(time.Now().Add(t).Unix()),
 		UserID:         user.ID,
 	}
 	err = a.RefreshStor.SetToken(tokenStruct)
