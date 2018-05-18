@@ -28,8 +28,8 @@ func main() {
 	}
 	fmt.Println(db)
 
-	userStor := userSQL.NewUserMyClientMySQL(db)
-	tokenStor := userSQL.NewTokenClientMySQL(db)
+	//userStor := userSQL.NewUserMyClientMySQL(db)
+	//tokenStor := userSQL.NewTokenClientMySQL(db)
 
 	apiCfg := webrpc.CfgAPI{
 		AccessPublicKey:  []byte(cfg.PublicKey),
@@ -37,5 +37,5 @@ func main() {
 		UserStor:         userStor,
 		RefreshStor:      tokenStor,
 	}
-
+	df
 }
