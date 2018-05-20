@@ -6,11 +6,12 @@ import (
 	"net/rpc"
 	"strconv"
 	"time"
+	"fmt"
 
 	"github.com/IhorBondartsov/OLX_Parser/userms/cfg"
 	"github.com/IhorBondartsov/OLX_Parser/userms/entities"
 
-	"fmt"
+
 	"github.com/IhorBondartsov/OLX_Parser/lib/jwtLib"
 	"github.com/IhorBondartsov/OLX_Parser/userms/storage"
 	"github.com/powerman/rpc-codec/jsonrpc2"
@@ -68,12 +69,9 @@ type API struct {
 	TTLAccessToken    time.Duration
 }
 
-
-
-type NameRes struct{ Name string }
-// Method with named params and HTTP context.
-func (a *API) Echo(_ struct{}, res *string) error {
-	fmt.Printf("FullName3(): Remote IP is %s\n", "2342354")
+// Echo method for checking service
+func (a *API) Echo(req EchoReq, res *EchoRes) error {
+	res.Answer = fmt.Sprintf("Hello %s!!!", req.Name)
 	return nil
 }
 

@@ -17,3 +17,11 @@ type AcessTokenRequest struct {
 type AcessTokenResponse struct {
 	AcessToken string
 }
+
+type EchoReq struct {
+	Name string
+}
+
+type EchoRes struct {
+	Answer string
+}
