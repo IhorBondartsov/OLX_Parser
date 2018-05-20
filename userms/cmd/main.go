@@ -11,7 +11,6 @@ import (
 	"github.com/IhorBondartsov/OLX_Parser/userms/cfg"
 	"github.com/IhorBondartsov/OLX_Parser/userms/webrpc"
 	"github.com/IhorBondartsov/OLX_Parser/userms/storage/userSQL"
-	"github.com/powerman/rpc-codec/jsonrpc2"
 	"net/http"
 )
 
@@ -42,15 +41,6 @@ func main() {
 	 webrpc.Start(apiCfg)
 
 
-//	go http.ListenAndServe("127.0.0.1:8001", nil)
-
 	log.Info("Listening on ", (cfg.Route+":"+cfg.Port))
-	go http.ListenAndServe((cfg.Route+":"+cfg.Port), nil)
-
-
-	clientHTTP := jsonrpc2.NewHTTPClient("http://127.0.0.1:8001/rpc")
-	defer clientHTTP.Close()
-
-	// Synchronous call using named params and HTTP with context.
-	clientHTTP.Call("API.FullName3", nil, nil)
+	log.Panic(http.ListenAndServe((cfg.Route+":"+cfg.Port), nil))
 }

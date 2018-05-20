@@ -22,16 +22,6 @@ const tokenLength = 256
 
 var log = logrus.New()
 
-
-type ExampleSvc struct{}
-type NameRes struct{ Name string }
-// Method with named params and HTTP context.
-func (a *API) FullName3(_ struct{}, res *NameRes) error {
-	fmt.Printf("FullName3(): Remote IP is %s\n", "2342354")
-	return nil
-}
-
-
 func Start(cfg CfgAPI) {
 	// Server export an object of type ExampleSvc.
 	if err :=rpc.Register(NewAPI(cfg)); err != nil {
@@ -62,6 +52,7 @@ func NewAPI(cfg CfgAPI) *API {
 	}
 }
 
+
 type CfgAPI struct {
 	AccessPublicKey  []byte
 	AccessPrivateKey []byte
@@ -76,6 +67,16 @@ type API struct {
 	RefreshStor       storage.RefreshToken
 	TTLAccessToken    time.Duration
 }
+
+
+
+type NameRes struct{ Name string }
+// Method with named params and HTTP context.
+func (a *API) Echo(_ struct{}, res *string) error {
+	fmt.Printf("FullName3(): Remote IP is %s\n", "2342354")
+	return nil
+}
+
 
 // Login - check user in database if user is in databse then ganarate and return refrash token
 func (a *API) Login(req LoginReq, resp *LoginResp) error {
