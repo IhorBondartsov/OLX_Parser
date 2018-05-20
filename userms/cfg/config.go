@@ -10,7 +10,7 @@ type SQL struct {
 
 var (
 	Storage = SQL{
-		Password: "",
+		Password: "sem1920dark",
 		Login:    "root",
 		Port:     "3306",
 		Host:     "127.0.0.1",
@@ -20,7 +20,7 @@ var (
 	TTLAcessToken   = 600
 	TTLRefreshToken = 10800
 	Route           = "127.0.0.1"
-	Port            = 8001
+	Port            = "8001"
 	PrivateKey      = []byte(`-----BEGIN PRIVATE KEY-----
 MIIEpQIBAAKCAQEAwEXBRCwisurukRcgKDfTpEHlG0lZOjNgPiS3vDorVv5k8pk6
 iERM0Q5Bi9ok9RLEuIuxY10b5ODp5qtIXODhg3a/hNye1gaQ1a2JhixTC0DUxYL0

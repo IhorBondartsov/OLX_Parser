@@ -1,4 +1,4 @@
-package mysql
+package userSQL
 
 import (
 	"github.com/IhorBondartsov/OLX_Parser/userms/entities"

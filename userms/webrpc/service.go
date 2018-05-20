@@ -2,14 +2,18 @@ package webrpc
 
 import (
 	"math/rand"
+	"net/http"
+	"net/rpc"
 	"strconv"
 	"time"
 
-	"github.com/IhorBondartsov/OLX_Parser/userMS/cfg"
+	"github.com/IhorBondartsov/OLX_Parser/userms/cfg"
 	"github.com/IhorBondartsov/OLX_Parser/userms/entities"
 
+	"fmt"
 	"github.com/IhorBondartsov/OLX_Parser/lib/jwtLib"
 	"github.com/IhorBondartsov/OLX_Parser/userms/storage"
+	"github.com/powerman/rpc-codec/jsonrpc2"
 	"github.com/sirupsen/logrus"
 )
 
@@ -18,13 +22,34 @@ const tokenLength = 256
 
 var log = logrus.New()
 
+
+type ExampleSvc struct{}
+type NameRes struct{ Name string }
+// Method with named params and HTTP context.
+func (*API) FullName3(_ struct{}, res *NameRes) error {
+	fmt.Printf("FullName3(): Remote IP is %s\n", "2342354")
+	return nil
+}
+
+
+func Start(cfg CfgAPI) {
+	// Server export an object of type ExampleSvc.
+	if err :=rpc.Register(NewAPI(cfg)); err != nil {
+		log.Panic(err)
+	}
+
+	// Server provide a HTTP transport on /rpc endpoint.
+	http.Handle("/rpc", jsonrpc2.HTTPHandler(nil))
+
+}
+
 func NewAPI(cfg CfgAPI) *API {
-	atp, err := jwtLib.NewJWTParser(cfg.AccessPrivateKey)
+	atp, err := jwtLib.NewJWTParser(cfg.AccessPublicKey)
 	if err != nil {
 		log.Errorf("Cant create AccessTokenParser. Err %v", err)
 		return nil
 	}
-	ats, err := jwtLib.NewJWTSigner(cfg.AccessPublicKey)
+	ats, err := jwtLib.NewJWTSigner(cfg.AccessPrivateKey)
 	if err != nil {
 		log.Errorf("Cant create AccessTokenSigner. Err %v", err)
 		return nil
