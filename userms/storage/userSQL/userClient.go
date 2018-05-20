@@ -38,10 +38,10 @@ const (
 					id = ?;
 `
 
-	getUserByID = `
+	getUserByLogin = `
 				SELECT *
 				FROM user WHERE
-					id = ?;
+					login = ?;
 `
 )
 
@@ -62,6 +62,6 @@ func (c *myUserClientMySQL) Delete(userID int) error {
 
 func (c *myUserClientMySQL) GetUserByLogin(login string) (entities.User, error) {
 	var user entities.User
-	err := c.db.Get(&user, getUserByID, login)
+	err := c.db.Get(&user, getUserByLogin, login)
 	return user, err
 }
