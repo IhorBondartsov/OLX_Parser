@@ -26,7 +26,7 @@ var log = logrus.New()
 type ExampleSvc struct{}
 type NameRes struct{ Name string }
 // Method with named params and HTTP context.
-func (*API) FullName3(_ struct{}, res *NameRes) error {
+func (a *API) FullName3(_ struct{}, res *NameRes) error {
 	fmt.Printf("FullName3(): Remote IP is %s\n", "2342354")
 	return nil
 }
