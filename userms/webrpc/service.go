@@ -1,16 +1,15 @@
 package webrpc
 
 import (
+	"fmt"
 	"math/rand"
 	"net/http"
 	"net/rpc"
 	"strconv"
 	"time"
-	"fmt"
 
 	"github.com/IhorBondartsov/OLX_Parser/userms/cfg"
 	"github.com/IhorBondartsov/OLX_Parser/userms/entities"
-
 
 	"github.com/IhorBondartsov/OLX_Parser/lib/jwtLib"
 	"github.com/IhorBondartsov/OLX_Parser/userms/storage"
@@ -25,7 +24,7 @@ var log = logrus.New()
 
 func Start(cfg CfgAPI) {
 	// Server export an object of type ExampleSvc.
-	if err :=rpc.Register(NewAPI(cfg)); err != nil {
+	if err := rpc.Register(NewAPI(cfg)); err != nil {
 		log.Panic(err)
 	}
 
@@ -53,7 +52,6 @@ func NewAPI(cfg CfgAPI) *API {
 	}
 }
 
-
 type CfgAPI struct {
 	AccessPublicKey  []byte
 	AccessPrivateKey []byte
@@ -71,10 +69,10 @@ type API struct {
 
 // Echo method for checking service
 func (a *API) Echo(req EchoReq, res *EchoRes) error {
+	fmt.Println("I called")
 	res.Answer = fmt.Sprintf("Hello %s!!!", req.Name)
 	return nil
 }
-
 
 // Login - check user in database if user is in databse then ganarate and return refrash token
 func (a *API) Login(req LoginReq, resp *LoginResp) error {
