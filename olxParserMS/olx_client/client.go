@@ -28,5 +28,19 @@ func GetHTMLPage(url string) 	{
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(doc.Find("tbody").)
-}
+	doc.Find("#offers_table").Each(func(i int, s *goquery.Selection) {
+		// For each item found, get the band and title
+		s.Find("tbody").Each(func(i int, s *goquery.Selection){
+			title := s.Find("h3")
+			url, ok := title.Find("a").Attr("href")
+			fmt.Printf("Review %d: %s - %s  - %s \n", i, title.Text(), url, ok)
+
+			time := s.Find(".space").Eq(2).Find("p").Last().Text()
+			fmt.Println("--------------> ", time)
+			})
+
+		})
+
+	}
+
+	//fmt.Println(doc.Find("#offers_table").Nodes[0].Namespace)
