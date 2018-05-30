@@ -10,6 +10,11 @@ type OLXClient struct{
 	httpClient *http.Client
 }
 
+type Result struct{
+	URL string
+	Date string
+}
+
 func GetHTMLPage(url string) 	{
 	log.Info("[GetHTMLPage]", url)
 
