@@ -3,5 +3,5 @@ package olx_client
 import "testing"
 
 func TestGetHTMLPage(t *testing.T) {
-	GetHTMLPage("https://www.olx.ua/zapchasti-dlya-transporta/kharkov/?search%5Bdistrict_id%5D=79")
+	GetHTMLPages("https://www.olx.ua/zhivotnye/ptitsy/q-%D0%B6%D0%B0%D0%BA%D0%BE/")
 }
