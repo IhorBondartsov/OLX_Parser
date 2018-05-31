@@ -14,6 +14,7 @@ func TestParseTime(t *testing.T) {
 		"Вчера 19:56":   1527710160,
 		"27 май":        1527379200,
 		"2 май ":        1525219200,
+		"Fail value":          0,
 	}
 
 	for k, v := range cases {
