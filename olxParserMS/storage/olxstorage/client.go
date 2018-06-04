@@ -57,6 +57,12 @@ const (
 					url = :url
 					created_at = :created_at
 `
+
+	getAdvertismentByOrderIDStmt = `
+				SELECT *
+				FROM advertisements WHERE
+					order_id = ?;
+`
 )
 
 func (c *parserStorage) CreateOrder(order entities.Order) error {
@@ -66,4 +72,9 @@ func (c *parserStorage) CreateOrder(order entities.Order) error {
 func (c *parserStorage) CreateAdvertisement(a entities.Advertisement) error {
 	_, err := c.db.NamedExec(createAdvertisementsStmt, a)
 	return err
+}
+func (c *parserStorage) GetAdvertismentByOrderID(oid int) ([]entities.Advertisement, error) {
+	var advs []entities.Advertisement
+	err := c.db.Get(&advs, getAdvertismentByOrderIDStmt, oid)
+	return advs, err
 }
