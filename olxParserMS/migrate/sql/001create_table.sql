@@ -2,12 +2,13 @@ CREATE DATABASE parserms;
 USE parserms;
 
 CREATE TABLE `order` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+    `id` INT NOT NULL AUTO_INCREMENT,
 	`user_id` INT NOT NULL,
 	`url` VARCHAR(1024) NOT NULL DEFAULT '' COLLATE 'utf8_unicode_ci',
 	`page_limit` INT DEFAULT 0,
 	`delivery_method` VARCHAR(256) NOT NULL DEFAULT '' COLLATE 'utf8_unicode_ci',
 	`expiration_time` INT NOT NULL,
+	`frequency` INT NOT NULL,
 	PRIMARY KEY (`id`)
 );
 

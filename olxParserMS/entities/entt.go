@@ -1,7 +1,19 @@
 package entities
 
 type Advertisement struct {
-	URL   string
-	Title string
-	Time  int64
+	ID      int    `db:"id"`
+	URL     string `db:"url"`
+	Title   string `db:"title"`
+	Time    int64  `db:"created_at"`
+	OrderID int    `db:"order_id"`
+}
+
+type Order struct {
+	ID             int    `db:"id"`
+	UserID         int    `db:"user_id"`
+	URL            string `db:"url"`
+	PageLimit      int    `db:"page_limit"`
+	DeliveryMethod string `db:"delivery_method"`
+	ExpirationTime int64  `db:"expiration_time"`
+	Frequency      int    `db:"frequency"`
 }
