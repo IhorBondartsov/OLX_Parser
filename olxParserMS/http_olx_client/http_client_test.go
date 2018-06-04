@@ -1,4 +1,4 @@
-package olx_client
+package http_olx_client
 
 import "testing"
 

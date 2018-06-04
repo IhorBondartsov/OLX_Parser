@@ -1,16 +1,16 @@
-package olx_client
+package http_olx_client
 
 import (
-	"fmt"
+	"net/http"
+	"strings"
+
 	"github.com/IhorBondartsov/OLX_Parser/olxParserMS/dateParser"
 	"github.com/IhorBondartsov/OLX_Parser/olxParserMS/entities"
 	"github.com/PuerkitoBio/goquery"
 	log "github.com/Sirupsen/logrus"
-	"net/http"
-	"strings"
 )
 
-type OLXClient struct {
+type OlxHttpClient struct {
 	httpClient *http.Client
 }
 
@@ -19,11 +19,11 @@ type Result struct {
 	Date string
 }
 
-func GetDocumentByUrl(url string) *goquery.Document {
+func (c *OlxHttpClient)GetDocumentByUrl(url string) *goquery.Document {
 	log.Info("[GetDocumentByUrl]", url)
 
 	// Request the HTML page.
-	res, err := http.Get(url)
+	res, err := c.httpClient.Get(url)
 	if err != nil {
 		log.Fatal(err)
 		return nil
@@ -41,7 +41,7 @@ func GetDocumentByUrl(url string) *goquery.Document {
 	return doc
 }
 
-func GetAdvertisements(doc *goquery.Document) []entities.Advertisement{
+func (c *OlxHttpClient)GetAdvertisements(doc *goquery.Document) []entities.Advertisement{
 	var advrtmnts []entities.Advertisement
 	if doc == nil {
 		return advrtmnts
@@ -49,7 +49,6 @@ func GetAdvertisements(doc *goquery.Document) []entities.Advertisement{
 	// Load the HTML document
 	doc.Find("#offers_table").Each(func(i int, s *goquery.Selection) {
 		s.Find(".wrap").Each(func(i int, s *goquery.Selection) {
-
 			advrtmnt := entities.Advertisement{}
 			title := s.Find("h3")
 			url, _ := title.Find("a").Attr("href")
@@ -65,13 +64,14 @@ func GetAdvertisements(doc *goquery.Document) []entities.Advertisement{
 	return advrtmnts
 }
 
-func GetHTMLPages(url string) []entities.Advertisement {
+// deep its max page count which will be read
+func (c *OlxHttpClient)GetHTMLPages(url string, deep int) []entities.Advertisement {
 	log.Info("[GetHTMLPages]", url)
 
 	var advrtmnts []entities.Advertisement
 
 	// Request the HTML page.
-	res, err := http.Get(url)
+	res, err := c.httpClient.Get(url)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -85,16 +85,16 @@ func GetHTMLPages(url string) []entities.Advertisement {
 		log.Fatal(err)
 	}
 
-	advrtmnts = append(advrtmnts, GetAdvertisements(doc)...)
+	advrtmnts = append(advrtmnts, c.GetAdvertisements(doc)...)
 
 	doc.Find(".pager").Each(func(i int, s *goquery.Selection) {
-		s.Find(".next").Each(func(i int, s *goquery.Selection) {
-			url, _ := s.Find("a").Attr("href")
-			advrtmnts = append(advrtmnts, GetAdvertisements(GetDocumentByUrl(url))...)
-		})
-
+		if i > deep {
+			s.Find(".next").Each(func(i int, s *goquery.Selection) {
+				url, _ := s.Find("a").Attr("href")
+				advrtmnts = append(advrtmnts, c.GetAdvertisements(c.GetDocumentByUrl(url))...)
+			})
+		}
 	})
-	fmt.Println(len(advrtmnts))
 	return advrtmnts
 }
 
