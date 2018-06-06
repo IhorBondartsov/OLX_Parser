@@ -25,28 +25,35 @@ const (
 					expiration_time = :expiration_time
 					frequency = :frequency
 `
-	updateUserStmtByID = `
-				UPDATE
-					user
-				SET
-					login             = :login,
-					password          = :password,
+	deleteAdvertisementsStmtByID = `
+				DELETE
+				FROM
+					advertisements
 				WHERE
-					id = :id;
+					order_id = ?;
 `
-	deleteUserStmtByID = `
+	deleteOrderStmtByID = `
 				DELETE
 				FROM
 					user
 				WHERE
 					id = ?;
 `
-
 	getOrderByUserIDAndURLStmt = `
 				SELECT *
 				FROM order WHERE
 					user_id = ?
 				AND	url = ?;
+`
+	getOrderByIDStmt = `
+				SELECT *
+				FROM order WHERE
+					id = ?;
+`
+	getOrderByUserIDStmt = `
+				SELECT *
+				FROM order WHERE
+					user_id = ?;
 `
 	// table advertisements
 	createAdvertisementsStmt = `
@@ -64,6 +71,7 @@ const (
 				FROM advertisements WHERE
 					order_id = ?;
 `
+
 )
 
 func (c *parserStorage) CreateOrder(order entities.Order) (int, error) {
@@ -81,7 +89,7 @@ func (c *parserStorage) CreateAdvertisement(a entities.Advertisement) error {
 	_, err := c.db.NamedExec(createAdvertisementsStmt, a)
 	return err
 }
-func (c *parserStorage) GetAdvertismentByOrderID(oid int) ([]entities.Advertisement, error) {
+func (c *parserStorage) GetAdvertisementByOrderID(oid int) ([]entities.Advertisement, error) {
 	var advs []entities.Advertisement
 	err := c.db.Get(&advs, getAdvertismentByOrderIDStmt, oid)
 	return advs, err
@@ -91,4 +99,25 @@ func (c *parserStorage) GetOrderByUserIDAndURL(uid int, url string) (entities.Or
 	var order entities.Order
 	err := c.db.Get(&order, getOrderByUserIDAndURLStmt, uid, url)
 	return order, err
+}
+
+func (c *parserStorage) GetOrderByID(oid int) (entities.Order, error){
+	var order entities.Order
+	err := c.db.Get(&order, getOrderByIDStmt, oid)
+	return order, err
+}
+
+func (c *parserStorage) GetOrdersByUserID(uid int) ([]entities.Order, error){
+	var order []entities.Order
+	err := c.db.Get(&order, getOrderByUserIDStmt, uid)
+	return order, err
+}
+
+func (c *parserStorage)DeleteAllInformationForOrder(oid int) error {
+	_, err := c.db.Query(deleteAdvertisementsStmtByID, oid)
+	if err != nil{
+		return err
+	}
+	_, err = c.db.Query(deleteOrderStmtByID, oid)
+	return  err
 }

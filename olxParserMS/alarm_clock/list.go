@@ -8,7 +8,7 @@ import (
 // Id - object which we keep
 // Time - "wake up time" time when this obj must be send. Using as sorting value. Must be on UNIX Time (second)
 type Item struct {
-	Id  int
+	Id   int
 	Time int64
 }
 

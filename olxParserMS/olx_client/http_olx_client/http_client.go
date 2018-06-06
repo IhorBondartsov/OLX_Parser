@@ -14,6 +14,12 @@ type OlxHttpClient struct {
 	httpClient *http.Client
 }
 
+func NewOLXHTTPClient(hc *http.Client)*OlxHttpClient{
+	return &OlxHttpClient{
+		httpClient:hc,
+	}
+}
+
 type Result struct {
 	URL  string
 	Date string

@@ -7,10 +7,10 @@ import (
 
 	"github.com/IhorBondartsov/OLX_Parser/lib/jwtLib"
 	"github.com/IhorBondartsov/OLX_Parser/olxParserMS/entities"
-	"github.com/IhorBondartsov/OLX_Parser/olxParserMS/storage"
-
 	"github.com/powerman/rpc-codec/jsonrpc2"
 	"github.com/sirupsen/logrus"
+	"github.com/IhorBondartsov/OLX_Parser/olxParserMS/olx_client/client"
+	"github.com/go-errors/errors"
 )
 
 var log = logrus.New()
@@ -34,16 +34,18 @@ func NewAPI(cfg CfgAPI) *API {
 	}
 	return &API{
 		AccessTokenParser: atp,
+		OLXClient:cfg.OLXClient,
 	}
 }
 
 type CfgAPI struct {
 	AccessPublicKey []byte
+	OLXClient *client.OLXClient
 }
 
 type API struct {
 	AccessTokenParser jwtLib.JWTParser
-	Storage           storage.Storage
+	OLXClient *client.OLXClient
 }
 
 // Echo method for checking service
@@ -61,7 +63,7 @@ func (a *API) MakeOrder(req MakeOrderReq, res *MakeOrderRes) error {
 	}
 
 	order := entities.Order{
-		DeliveryMethod: req.DeliveryMethod,
+		Mail: req.Mail,
 		ExpirationTime: req.DateTo,
 		Frequency:      req.Frequency,
 		PageLimit:      req.PageLimit,
@@ -69,6 +71,28 @@ func (a *API) MakeOrder(req MakeOrderReq, res *MakeOrderRes) error {
 		UserID:         req.UserID,
 	}
 
+	return a.OLXClient.GetAndSendAdvertisement(order)
+}
 
-	return nil
+func (a *API) ShowAllOder(req ShowAllOderReq, res *ShowAllOderResp) error {
+	_, err := a.AccessTokenParser.Parse(req.Token)
+	if err != nil {
+		return err
+	}
+	res.Orders, err = a.OLXClient.Storage.GetOrdersByUserID(req.UserID)
+	return err
+}
+
+func (a *API) GetAdvertisementByOrder(req GetAdvertisementByOrderReq, res *GetAdvertisementByOrderResp) error {
+	c, err := a.AccessTokenParser.Parse(req.Token)
+	if err != nil {
+		return err
+	}
+	order, err := a.OLXClient.Storage.GetOrderByID(req.OrderID)
+	if err != nil{ return err}
+	if c.ID != fmt.Sprintf("%d", order.UserID){
+		return errors.New("Forbidden user id not your")
+	}
+	res.Advertisements, err = a.OLXClient.Storage.GetAdvertisementByOrderID(req.OrderID)
+	return err
 }

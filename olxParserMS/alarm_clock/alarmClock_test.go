@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-
 )
 
 func TestAlarmClock_Work(t *testing.T) {

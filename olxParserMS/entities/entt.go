@@ -13,7 +13,7 @@ type Order struct {
 	UserID         int    `db:"user_id"`
 	URL            string `db:"url"`
 	PageLimit      int    `db:"page_limit"`
-	DeliveryMethod string `db:"delivery_method"`
+	Mail           string `db:"mail"`
 	ExpirationTime int64  `db:"expiration_time"`
 	Frequency      int    `db:"frequency"`
 }
