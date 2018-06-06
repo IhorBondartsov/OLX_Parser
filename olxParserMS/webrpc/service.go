@@ -8,7 +8,7 @@ import (
 	"github.com/IhorBondartsov/OLX_Parser/lib/jwtLib"
 	"github.com/IhorBondartsov/OLX_Parser/olxParserMS/entities"
 	"github.com/powerman/rpc-codec/jsonrpc2"
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/IhorBondartsov/OLX_Parser/olxParserMS/olx_client/client"
 	"github.com/go-errors/errors"
 )
@@ -57,10 +57,10 @@ func (a *API) Echo(req EchoReq, res *EchoRes) error {
 
 // MakeOrder - make row to db
 func (a *API) MakeOrder(req MakeOrderReq, res *MakeOrderRes) error {
-	_, err := a.AccessTokenParser.Parse(req.Token)
-	if err != nil {
-		return err
-	}
+	//_, err := a.AccessTokenParser.Parse(req.Token)
+	//if err != nil {
+	//	return err
+	//}
 
 	order := entities.Order{
 		Mail: req.Mail,
@@ -71,7 +71,7 @@ func (a *API) MakeOrder(req MakeOrderReq, res *MakeOrderRes) error {
 		UserID:         req.UserID,
 	}
 
-	return a.OLXClient.GetAndSendAdvertisement(order)
+	return a.OLXClient.AddNewOrder(order)
 }
 
 func (a *API) ShowAllOder(req ShowAllOderReq, res *ShowAllOderResp) error {

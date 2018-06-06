@@ -16,14 +16,14 @@ type parserStorage struct {
 const (
 	createOrderStmt = `
 				INSERT INTO
-					order
+					orderOLX
 				SET
-					user_id = :user_id
-					url = :url
-					page_limit = :page_limit
-					delivery_method = :delivery_method
-					expiration_time = :expiration_time
-					frequency = :frequency
+					user_id = :user_id,
+					url = :url,
+					page_limit = :page_limit,
+					mail = :mail,
+					expiration_time = :expiration_time,
+					frequency = :frequency;
 `
 	deleteAdvertisementsStmtByID = `
 				DELETE
@@ -41,18 +41,18 @@ const (
 `
 	getOrderByUserIDAndURLStmt = `
 				SELECT *
-				FROM order WHERE
+				FROM orderOLX WHERE
 					user_id = ?
 				AND	url = ?;
 `
 	getOrderByIDStmt = `
 				SELECT *
-				FROM order WHERE
+				FROM orderOLX WHERE
 					id = ?;
 `
 	getOrderByUserIDStmt = `
 				SELECT *
-				FROM order WHERE
+				FROM orderOLX WHERE
 					user_id = ?;
 `
 	// table advertisements
@@ -60,10 +60,10 @@ const (
 				INSERT INTO
 					advertisements
 				SET
-					order_id = :order_id
-					title = :title
-					url = :url
-					created_at = :created_at
+					order_id = :order_id,
+					title = :title,
+					url = :url,
+					created_at = :created_at;
 `
 
 	getAdvertismentByOrderIDStmt = `

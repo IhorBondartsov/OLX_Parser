@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "github.com/go-sql-driver/mysql"
 	"fmt"
 	"github.com/IhorBondartsov/OLX_Parser/olxParserMS/alarm_clock"
 	"github.com/IhorBondartsov/OLX_Parser/olxParserMS/cfg"

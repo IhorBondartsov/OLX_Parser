@@ -76,6 +76,7 @@ func (c *OLXClient) AddNewOrder(order entities.Order) error {
 
 	order.ID, err = c.Storage.CreateOrder(order)
 	if err != nil {
+		log.Error("[OLXClient][AddNewOrder]Cant create order %v", err)
 		return err
 	}
 
@@ -110,6 +111,7 @@ func (c *OLXClient) sendItemToAlarmClock(time int64, id int) {
 
 func (c *OLXClient) hasOrder(order entities.Order) bool {
 	_, err := c.Storage.GetOrderByUserIDAndURL(order.UserID, order.URL)
+	log.Infof("[OLXClient][hasOrder] err == sql.ErrNoRows %v", err == sql.ErrNoRows)
 	if err == sql.ErrNoRows {
 		return true
 	}

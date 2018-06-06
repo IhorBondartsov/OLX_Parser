@@ -1,7 +1,7 @@
 CREATE DATABASE parserms;
 USE parserms;
 
-CREATE TABLE `order` (
+CREATE TABLE `orderOLX` (
   `id` INT NOT NULL AUTO_INCREMENT,
 	`user_id` INT NOT NULL,
 	`url` VARCHAR(1024) NOT NULL DEFAULT '' COLLATE 'utf8_unicode_ci',
@@ -19,7 +19,7 @@ CREATE TABLE advertisements (
 	`url` VARCHAR(1024) NOT NULL DEFAULT '' COLLATE 'utf8_unicode_ci',
 	`created_at`  BIGINT NOT NULL,
 	PRIMARY KEY (`id`),
-	FOREIGN KEY (`order_id`) REFERENCES `order`(`id`)
+	FOREIGN KEY (`order_id`) REFERENCES `orderOLX`(`id`)
 )
 COLLATE='utf8_unicode_ci'
 ENGINE=InnoDB

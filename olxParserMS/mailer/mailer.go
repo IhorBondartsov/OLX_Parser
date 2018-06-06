@@ -40,6 +40,7 @@ func (m *mailer) SendMail(adverts []entities.Advertisement, Mail string) error {
 	if err := d.DialAndSend(mess); err != nil {
 		return err
 	}
+	return nil
 }
 
 func (m *mailer) GenerateBody(adverts []entities.Advertisement) string {
