@@ -1,6 +1,6 @@
 package cfg
 
-const(
+const (
 	Route = "127.0.0.1"
-	Port = 8000
+	Port  = 8000
 )

@@ -41,12 +41,16 @@ func Test_FiltredAdv(t *testing.T) {
 
 	var actual []entities.Advertisement
 	for _, v := range newAdv {
+		has := false
 		for _, sv := range savedAdv {
 			if sv.URL == v.URL {
+				has = true
 				break
 			}
 		}
-		actual = append(actual, v)
+		if !has {
+			actual = append(actual, v)
+		}
 	}
 
 	fmt.Println(actual)

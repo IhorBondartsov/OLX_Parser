@@ -2,10 +2,10 @@ package server
 
 import (
 	"fmt"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"time"
-	"github.com/gorilla/mux"
 )
 
 // server - create new server
@@ -29,13 +29,13 @@ func NewServer(cfg CfgServer) *server {
 }
 
 // Start - start http server
-func (s *server) Start(){
+func (s *server) Start() {
 	r := mux.NewRouter()
 	r.HandleFunc("/info", Info).Methods("GET")
 
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./view/")))
 
-	addr := fmt.Sprintf("%v:%d",s.Route,s.Port)
+	addr := fmt.Sprintf("%v:%d", s.Route, s.Port)
 	srv := &http.Server{
 		Handler:      r,
 		Addr:         addr,
@@ -49,4 +49,3 @@ func (s *server) Start(){
 func Info(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(w, "Hello world!")
 }
-

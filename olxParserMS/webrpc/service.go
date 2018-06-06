@@ -69,9 +69,6 @@ func (a *API) MakeOrder(req MakeOrderReq, res *MakeOrderRes) error {
 		UserID:         req.UserID,
 	}
 
-	err = a.Storage.CreateOrder(order)
-	if err != nil {
-		return err
-	}
+
 	return nil
 }

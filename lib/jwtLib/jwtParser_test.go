@@ -1,8 +1,8 @@
 package jwtLib
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 var testPrivateKey = []byte(`-----BEGIN PRIVATE KEY-----
@@ -43,14 +43,13 @@ OiP8d2rkiLV0iPNV8KID/kWiGAWcwJ4bJQIDAQAB
 -----END PUBLIC KEY-----
 `)
 
-
 func TestRsaParser_Parse(t *testing.T) {
 	claim := Claims{
 		ID: "10",
 	}
 	a := assert.New(t)
 
-	si, err:= NewJWTSigner(testPrivateKey)
+	si, err := NewJWTSigner(testPrivateKey)
 	a.NoError(err)
 
 	token, err := si.Sign(claim, 42)
@@ -63,7 +62,6 @@ func TestRsaParser_Parse(t *testing.T) {
 	a.NoError(err)
 	a.Equal(claim.ID, cl.ID)
 }
-
 
 func TestRsaParser_ParseError(t *testing.T) {
 	// Token from another example.  This token is expired
@@ -78,6 +76,3 @@ func TestRsaParser_ParseError(t *testing.T) {
 	a.Equal(ErrTokenExpired, err)
 	a.Nil(cl)
 }
-
-
-

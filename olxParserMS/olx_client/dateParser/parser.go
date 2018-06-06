@@ -45,7 +45,7 @@ func parseMonth(date string) int64 {
 	for k, v := range month {
 		if strings.Contains(date, v) {
 			var month string
-			if k +1< 10 {
+			if k+1 < 10 {
 				month = fmt.Sprintf("0%d", k+1)
 			} else {
 				month = fmt.Sprintf("%d", k+1)
@@ -77,6 +77,6 @@ func parseTime(strTime string) int {
 	for k, v := range val {
 		valInt[k], _ = strconv.Atoi(v)
 	}
-	return valInt[0]*3600 + valInt[1] *60
+	return valInt[0]*3600 + valInt[1]*60
 
 }

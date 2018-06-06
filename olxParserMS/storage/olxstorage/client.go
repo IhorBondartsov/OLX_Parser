@@ -42,10 +42,11 @@ const (
 					id = ?;
 `
 
-	getUserByLogin = `
+	getOrderByUserIDAndURLStmt = `
 				SELECT *
-				FROM user WHERE
-					login = ?;
+				FROM order WHERE
+					user_id = ?
+				AND	url = ?;
 `
 	// table advertisements
 	createAdvertisementsStmt = `
@@ -65,9 +66,16 @@ const (
 `
 )
 
-func (c *parserStorage) CreateOrder(order entities.Order) error {
-	_, err := c.db.NamedExec(createOrderStmt, order)
-	return err
+func (c *parserStorage) CreateOrder(order entities.Order) (int, error) {
+	res, err := c.db.NamedExec(createOrderStmt, order)
+	if err != nil {
+		return 0, err
+	}
+	id, err := res.LastInsertId()
+	if err != nil {
+		return 0, err
+	}
+	return int(id), nil
 }
 func (c *parserStorage) CreateAdvertisement(a entities.Advertisement) error {
 	_, err := c.db.NamedExec(createAdvertisementsStmt, a)
@@ -77,4 +85,10 @@ func (c *parserStorage) GetAdvertismentByOrderID(oid int) ([]entities.Advertisem
 	var advs []entities.Advertisement
 	err := c.db.Get(&advs, getAdvertismentByOrderIDStmt, oid)
 	return advs, err
+}
+
+func (c *parserStorage) GetOrderByUserIDAndURL(uid int, url string) (entities.Order, error) {
+	var order entities.Order
+	err := c.db.Get(&order, getOrderByUserIDAndURLStmt, uid, url)
+	return order, err
 }

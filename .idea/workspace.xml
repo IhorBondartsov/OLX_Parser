@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3eca026-dfdc-4e0f-8692-6e16a23e4cc8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/olxParserMS/migrate/sql/001create_table.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/olxParserMS/migrate/sql/001delete_table.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/olxParserMS/storage/interface.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/olxParserMS/storage/olxstorage/client.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/olxParserMS/webrpc/api.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/olxParserMS/webrpc/service.go" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/olxParserMS/olx_client/client.go" afterPath="$PROJECT_DIR$/olxParserMS/http_olx_client/http_client.go" />
-      <change beforePath="$PROJECT_DIR$/olxParserMS/olx_client/client_test.go" afterPath="$PROJECT_DIR$/olxParserMS/http_olx_client/http_client_test.go" />
+      <change beforePath="$PROJECT_DIR$/lib/jwtLib/jwtParser_test.go" afterPath="$PROJECT_DIR$/lib/jwtLib/jwtParser_test.go" />
+      <change beforePath="$PROJECT_DIR$/lib/jwtLib/jwtSigner.go" afterPath="$PROJECT_DIR$/lib/jwtLib/jwtSigner.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/alarmClock/alarmClock.go" afterPath="$PROJECT_DIR$/olxParserMS/alarm_clock/alarmClock.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/alarmClock/alarmClock_test.go" afterPath="$PROJECT_DIR$/olxParserMS/alarm_clock/alarmClock_test.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/alarmClock/list.go" afterPath="$PROJECT_DIR$/olxParserMS/alarm_clock/list.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/alarmClock/list_test.go" afterPath="$PROJECT_DIR$/olxParserMS/alarm_clock/list_test.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/migrate/sql/001create_table.sql" afterPath="$PROJECT_DIR$/olxParserMS/migrate/sql/001create_table.sql" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/olx_client/client/clien.go" afterPath="$PROJECT_DIR$/olxParserMS/olx_client/client/client.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/olx_client/client/client_test.go" afterPath="$PROJECT_DIR$/olxParserMS/olx_client/client/client_test.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/olx_client/dateParser/parser.go" afterPath="$PROJECT_DIR$/olxParserMS/olx_client/dateParser/parser.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/olx_client/dateParser/parser_test.go" afterPath="$PROJECT_DIR$/olxParserMS/olx_client/dateParser/parser_test.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/olx_client/http_olx_client/http_client_test.go" afterPath="$PROJECT_DIR$/olxParserMS/olx_client/http_olx_client/http_client_test.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/storage/interface.go" afterPath="$PROJECT_DIR$/olxParserMS/storage/interface.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/storage/olxstorage/client.go" afterPath="$PROJECT_DIR$/olxParserMS/storage/olxstorage/client.go" />
+      <change beforePath="$PROJECT_DIR$/olxParserMS/webrpc/service.go" afterPath="$PROJECT_DIR$/olxParserMS/webrpc/service.go" />
+      <change beforePath="$PROJECT_DIR$/website/cfg/config.go" afterPath="$PROJECT_DIR$/website/cfg/config.go" />
+      <change beforePath="$PROJECT_DIR$/website/cmd/main.go" afterPath="$PROJECT_DIR$/website/cmd/main.go" />
+      <change beforePath="$PROJECT_DIR$/website/server/server.go" afterPath="$PROJECT_DIR$/website/server/server.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,42 +42,42 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="http_client.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/olxParserMS/http_olx_client/http_client.go">
+    <leaf>
+      <file leaf-file-name="client.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/olxParserMS/olx_client/client/client.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="43" column="79" lean-forward="false" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="79" />
+            <state relative-caret-position="208">
+              <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="http_client_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/olxParserMS/http_olx_client/http_client_test.go">
+      <file leaf-file-name="client_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/olxParserMS/olx_client/client/client_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="-346">
+              <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parser_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/olxParserMS/dateParser/parser_test.go">
+      <file leaf-file-name="service.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/olxParserMS/webrpc/service.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="356">
+              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entt.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/olxParserMS/entities/entt.go">
+      <file leaf-file-name="list.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/olxParserMS/alarm_clock/list.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/olxParserMS/storage/interface.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -86,48 +96,53 @@
       <file leaf-file-name="client.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/olxParserMS/storage/olxstorage/client.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+            <state relative-caret-position="198">
+              <caret line="68" column="70" lean-forward="false" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="70" />
+              <folding>
+                <marker date="1528286875789" expanded="true" signature="277:485" ph="INSERT INTO order" />
+                <marker date="1528286875789" expanded="true" signature="753:815" ph="SELECT * FRO... order" />
+                <marker date="1528286875789" expanded="true" signature="878:1009" ph="INSERT INTO advertisements" />
+                <marker date="1528286875789" expanded="true" signature="1051:1107" ph="SELECT * FRO... advertisements" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="http_client.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/olxParserMS/olx_client/http_olx_client/http_client.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="739">
+              <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="001create_table.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/olxParserMS/migrate/sql/001create_table.sql">
+      <file leaf-file-name="alarmClock.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/olxParserMS/alarm_clock/alarmClock.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="001create_table.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/userms/migrate/sql/001create_table.sql">
+      <file leaf-file-name="alarmClock_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/olxParserMS/alarm_clock/alarmClock_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="14" />
+            <state relative-caret-position="198">
+              <caret line="191" column="19" lean-forward="true" selection-start-line="191" selection-start-column="19" selection-end-line="191" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/olxParserMS/webrpc/api.go">
+      <file leaf-file-name="list_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/olxParserMS/alarm_clock/list_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="service.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/olxParserMS/webrpc/service.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="14" />
+            <state relative-caret-position="482">
+              <caret line="153" column="0" lean-forward="false" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -158,16 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/website/cfg/config.go" />
-        <option value="$PROJECT_DIR$/website/cmd/main.go" />
-        <option value="$PROJECT_DIR$/website/view/css/index.css" />
-        <option value="$PROJECT_DIR$/website/view/js/validate_field.js" />
-        <option value="$PROJECT_DIR$/website/view/index.html" />
-        <option value="$PROJECT_DIR$/website/view/js/auth_form.js" />
-        <option value="$PROJECT_DIR$/website/view/js/requests.js" />
-        <option value="$PROJECT_DIR$/website/server/server.go" />
-        <option value="$PROJECT_DIR$/lib/jwtParser/jwtParser.go" />
-        <option value="$PROJECT_DIR$/userMS/cmd/main.go" />
         <option value="$PROJECT_DIR$/userMS/util/GenarateRSAKeys/main.go" />
         <option value="$PROJECT_DIR$/userMS/cntxt/tokenSigner.go" />
         <option value="$PROJECT_DIR$/lib/jwtParser/jwtSigner.go" />
@@ -203,12 +208,22 @@
         <option value="$PROJECT_DIR$/olxParserMS/olx_client/client_test.go" />
         <option value="$PROJECT_DIR$/olxParserMS/olx_client/client.go" />
         <option value="$PROJECT_DIR$/olxParserMS/http_olx_client/http_client.go" />
-        <option value="$PROJECT_DIR$/olxParserMS/storage/olxstorage/client.go" />
         <option value="$PROJECT_DIR$/userms/migrate/sql/001create_table.sql" />
-        <option value="$PROJECT_DIR$/olxParserMS/migrate/sql/001create_table.sql" />
-        <option value="$PROJECT_DIR$/olxParserMS/storage/interface.go" />
         <option value="$PROJECT_DIR$/olxParserMS/webrpc/api.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/olx_client/client/client_test.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/migrate/sql/001create_table.sql" />
         <option value="$PROJECT_DIR$/olxParserMS/webrpc/service.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/olx_client/http_olx_client/http_client.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/storage/olxstorage/client.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/storage/interface.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/olx_client/client/client.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/alarmClock/alarmClock.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/alarmClock/alarmClock_test.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/alarmClock/list_test.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/alarmClock/list.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/alarm_clock/alarmClock.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/alarm_clock/alarmClock_test.go" />
+        <option value="$PROJECT_DIR$/olxParserMS/alarm_clock/list.go" />
       </list>
     </option>
   </component>
@@ -239,6 +254,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -255,12 +271,50 @@
               <item name="OLX_Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="OLX_Parser" type="462c0819:PsiDirectoryNode" />
               <item name="olxParserMS" type="462c0819:PsiDirectoryNode" />
-              <item name="webrpc" type="462c0819:PsiDirectoryNode" />
+              <item name="alarm_clock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OLX_Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OLX_Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="olxParserMS" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OLX_Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OLX_Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="olxParserMS" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OLX_Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OLX_Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="olxParserMS" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="olxstorage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OLX_Parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="OLX_Parser" type="462c0819:PsiDirectoryNode" />
               <item name="userms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OLX_Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OLX_Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="userms" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OLX_Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OLX_Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="userms" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="userSQL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OLX_Parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OLX_Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="userms" type="462c0819:PsiDirectoryNode" />
+              <item name="webrpc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OLX_Parser" type="b2602c69:ProjectViewProjectNode" />
@@ -270,7 +324,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -312,7 +365,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestGetHTMLPage in client_test.go">
+  <component name="RunManager" selected="Go Test.Test_FiltredAdv in client_test.go">
     <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="OLX_Parser" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -340,14 +393,14 @@
       <package value="github.com/IhorBondartsov/OLX_Parser/olxParserMS/dateParser" />
       <pattern value="^TestParseTime$" />
     </configuration>
-    <configuration name="TestRsaParser_ParseError in jwtParser_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+    <configuration name="Test_FiltredAdv in client_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="OLX_Parser" />
-      <working_directory value="$PROJECT_DIR$/lib/jwtLib" />
+      <working_directory value="$PROJECT_DIR$/olxParserMS/olx_client/client" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/IhorBondartsov/OLX_Parser/lib/jwtLib" />
-      <pattern value="^TestRsaParser_ParseError$" />
+      <package value="github.com/IhorBondartsov/OLX_Parser/olxParserMS/olx_client/client" />
+      <pattern value="^Test_FiltredAdv$" />
     </configuration>
     <configuration name="go test github.com/IhorBondartsov/OLX_Parser/lib/jwtLib" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="OLX_Parser" />
@@ -358,19 +411,19 @@
       <package value="github.com/IhorBondartsov/OLX_Parser/lib/jwtLib" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Go Test.TestRsaParser_ParseError in jwtParser_test.go" />
-      <item index="1" class="java.lang.String" itemvalue="Go Build.go build main.go (2)" />
-      <item index="2" class="java.lang.String" itemvalue="Go Test.go test github.com/IhorBondartsov/OLX_Parser/lib/jwtLib" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.TestGetHTMLPage in client_test.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.TestParseTime in parser_test.go" />
+      <item index="0" class="java.lang.String" itemvalue="Go Build.go build main.go (2)" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.go test github.com/IhorBondartsov/OLX_Parser/lib/jwtLib" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.TestGetHTMLPage in client_test.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Test.TestParseTime in parser_test.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.Test_FiltredAdv in client_test.go" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Test.TestGetHTMLPage in client_test.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Test.TestParseTime in parser_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Test.go test github.com/IhorBondartsov/OLX_Parser/lib/jwtLib" />
-        <item index="3" class="java.lang.String" itemvalue="Go Build.go build main.go (2)" />
-        <item index="4" class="java.lang.String" itemvalue="Go Test.TestRsaParser_ParseError in jwtParser_test.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Test.Test_FiltredAdv in client_test.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Test.TestGetHTMLPage in client_test.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.TestParseTime in parser_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.go test github.com/IhorBondartsov/OLX_Parser/lib/jwtLib" />
+        <item index="4" class="java.lang.String" itemvalue="Go Build.go build main.go (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -378,9 +431,6 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestGetHTMLPage_in_client_test_go - 2018.05.31 at 20h 53m 37s.xml">
-      <configuration name="TestGetHTMLPage in client_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestGetHTMLPage_in_client_test_go - 2018.05.31 at 20h 57m 45s.xml">
       <configuration name="TestGetHTMLPage in client_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -408,6 +458,9 @@
     <history-entry file="TestParseTime_in_parser_test_go - 2018.05.31 at 20h 19m 21s.xml">
       <configuration name="TestParseTime in parser_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="Test_FiltredAdv_in_client_test_go - 2018.06.06 at 11h 45m 44s.xml">
+      <configuration name="Test_FiltredAdv in client_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,17 +475,17 @@
     <frame x="1920" y="-4" width="1920" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20064034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20490928" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38709676" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38709676" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.49806523" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.49806523" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -456,51 +509,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/website/view/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/view/js/auth_form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/view/js/validate_field.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/view/js/requests.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/server/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userMS/cmd/private.key" />
-    <entry file="file://$PROJECT_DIR$/userMS/cntxt/tokenSigner.go" />
-    <entry file="file://$PROJECT_DIR$/../../../../../env/go/src/crypto/rsa/rsa.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="196" column="5" lean-forward="false" selection-start-line="196" selection-start-column="5" selection-end-line="196" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userMS/util/GenarateRSAKeys/private.key" />
     <entry file="file://$PROJECT_DIR$/userMS/util/GenarateRSAKeys/public.key" />
     <entry file="file://$PROJECT_DIR$/userMS/util/GenarateRSAKeys/public.pem" />
     <entry file="file://$PROJECT_DIR$/userMS/util/GenarateRSAKeys/private.pem" />
@@ -627,13 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userms/webrpc/service.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userms/storage/userSQL/client_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -645,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -656,69 +656,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userms/storage/userSQL/userClient.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-          <folding>
-            <marker date="1526823242722" expanded="true" signature="568:615" ph="DELETE FROM user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/olxParserMS/entitys.go" />
     <entry file="file://$PROJECT_DIR$/../../PuerkitoBio/goquery/array.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1242">
           <caret line="69" column="60" lean-forward="false" selection-start-line="69" selection-start-column="3" selection-end-line="69" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/olxParserMS/dateParser/parser.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/olxParserMS/http_olx_client/http_client.go">
+    <entry file="file://$PROJECT_DIR$/olxParserMS/dateParser/parser.go" />
+    <entry file="file://$PROJECT_DIR$/olxParserMS/http_olx_client/http_client.go" />
+    <entry file="file://$PROJECT_DIR$/olxParserMS/http_olx_client/http_client_test.go" />
+    <entry file="file://$PROJECT_DIR$/olxParserMS/dateParser/parser_test.go" />
+    <entry file="file://$PROJECT_DIR$/userms/migrate/sql/001create_table.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="43" column="79" lean-forward="false" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/olxParserMS/http_olx_client/http_client_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/olxParserMS/entities/entt.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/olxParserMS/dateParser/parser_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userms/migrate/sql/001create_table.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="14" />
+        <state relative-caret-position="306">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -726,23 +686,7 @@
     <entry file="file://$PROJECT_DIR$/olxParserMS/migrate/sql/001create_table.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/olxParserMS/storage/olxstorage/client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/olxParserMS/storage/interface.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -750,15 +694,126 @@
     <entry file="file://$PROJECT_DIR$/olxParserMS/webrpc/api.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olxParserMS/olx_client/client/client_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-346">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../env/go/src/database/sql/sql.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="304" column="4" lean-forward="false" selection-start-line="304" selection-start-column="4" selection-end-line="304" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userms/storage/userSQL/userClient.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="65" column="20" lean-forward="true" selection-start-line="63" selection-start-column="4" selection-end-line="65" selection-end-column="20" />
+          <folding>
+            <marker date="1528273233297" expanded="true" signature="568:615" ph="DELETE FROM user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userms/webrpc/service.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/olxParserMS/webrpc/service.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="14" />
+        <state relative-caret-position="356">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olxParserMS/storage/olxstorage/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="68" column="70" lean-forward="false" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="70" />
+          <folding>
+            <marker date="1528286875789" expanded="true" signature="277:485" ph="INSERT INTO order" />
+            <marker date="1528286875789" expanded="true" signature="753:815" ph="SELECT * FRO... order" />
+            <marker date="1528286875789" expanded="true" signature="878:1009" ph="INSERT INTO advertisements" />
+            <marker date="1528286875789" expanded="true" signature="1051:1107" ph="SELECT * FRO... advertisements" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olxParserMS/storage/interface.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../env/go/src/time/time.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="619" column="5" lean-forward="false" selection-start-line="619" selection-start-column="5" selection-end-line="619" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olxParserMS/olx_client/http_olx_client/http_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olxParserMS/olx_client/client/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olxParserMS/alarm_clock/list_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="153" column="0" lean-forward="false" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olxParserMS/alarm_clock/alarmClock.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olxParserMS/alarm_clock/alarmClock_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="191" column="19" lean-forward="true" selection-start-line="191" selection-start-column="19" selection-end-line="191" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olxParserMS/alarm_clock/list.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
