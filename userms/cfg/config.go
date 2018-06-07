@@ -8,19 +8,8 @@ type SQL struct {
 	DBName   string
 }
 
-type MicroServices struct{
-	Host string
-	Port string
-	Prefix string
-}
-
 var (
-	// userms
-	UserMS = MicroServices{
-		Port:"8001",
-		Host:"http://127.0.0.1",
-		Prefix:"API",
-	}
+
 	Storage = SQL{
 		Password: "sem1920dark",
 		Login:    "root",

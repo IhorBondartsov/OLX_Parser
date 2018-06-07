@@ -11,7 +11,7 @@ import (
 	"github.com/Sirupsen/logrus"
 	"github.com/gorilla/mux"
 	"io/ioutil"
-	"github.com/IhorBondartsov/OLX_Parser/userms/cfg"
+	"github.com/IhorBondartsov/OLX_Parser/website/cfg"
 )
 
 var log = logrus.New()
@@ -41,6 +41,7 @@ func (s *server) Start() {
 	r := mux.NewRouter()
 	r.HandleFunc("/info", Info).Methods("GET")
 	r.HandleFunc("/userms/rpc", UserMS).Methods("POST")
+	r.HandleFunc("/parser/rpc", ParserMS).Methods("POST")
 
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./view/")))
 
@@ -115,5 +116,69 @@ func UserMS(w http.ResponseWriter, req *http.Request) {
 	}
 	w.WriteHeader(http.StatusOK)
 	w.Write(bodyResp)
-
 }
+
+func ParserMS(w http.ResponseWriter, req *http.Request) {
+	log.Info("[Server][ParserMS]")
+	cli := clients.NewOLXParserRPCClient(cfg.ParserMS.Host, cfg.ParserMS.Port, cfg.ParserMS.Prefix)
+
+	b, err := ioutil.ReadAll(req.Body)
+	if err != nil {
+		log.Errorf("[Server][UserMS] Cant read body Err %v", err)
+	}
+
+	var reqJSON Request
+	var bodyResp []byte
+	err = json.Unmarshal(b, &reqJSON)
+	if err != nil {
+		log.Errorf("[Server][UserMS] Cant unmarshal Err %v", err)
+	}
+	switch reqJSON.Method {
+	case "Echo":
+		var er entity.EchoReq
+		err = json.Unmarshal(reqJSON.Data, &er)
+		if err != nil {
+			log.Errorf("[Server][UserMS] Cant unmarshal Err %v", err)
+		}
+		bodyResp, err = cli.Echo(er.Name)
+		if err != nil {
+			log.Errorf("[Server][UserMS] Err %v", err)
+		}
+	case "MakeOrder":
+		var er entity.MakeOrderReq
+		err = json.Unmarshal(reqJSON.Data, &er)
+		if err != nil {
+			log.Errorf("[Server][UserMS] Cant unmarshal Err %v", err)
+		}
+		bodyResp, err = cli.MakeOrder(er)
+		if err != nil {
+			log.Errorf("[Server][UserMS] Err %v", err)
+		}
+	case "ShowAllOder":
+		var er entity.ShowAllOderReq
+		err = json.Unmarshal(reqJSON.Data, &er)
+		if err != nil {
+			log.Errorf("[Server][UserMS] Cant unmarshal Err %v", err)
+		}
+		bodyResp, err = cli.ShowAllOder(er)
+		if err != nil {
+			log.Errorf("[Server][UserMS] Err %v", err)
+		}
+	case "GetAdvertisementByOrder":
+		var er entity.GetAdvertisementByOrderReq
+		err = json.Unmarshal(reqJSON.Data, &er)
+		if err != nil {
+			log.Errorf("[Server][UserMS] Cant unmarshal Err %v", err)
+		}
+		bodyResp, err = cli.GetAdvertisementByOrder(er)
+		if err != nil {
+			log.Errorf("[Server][UserMS] Err %v", err)
+		}
+	}
+
+	w.WriteHeader(http.StatusOK)
+	w.Write(bodyResp)
+}
+
+
+

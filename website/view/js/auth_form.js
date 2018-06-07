@@ -9,5 +9,5 @@ function Authorization(form){
     if (!isValidMail(mail)){
         return
     }
-    GetAuthorization()
+    GetAuthorization(mail, passwd)
 }

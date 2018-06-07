@@ -1,9 +1,11 @@
+function GetAuthorization(login, password){
 
-
-function GetAuthorization(){
 var json = JSON.stringify({
-    Method:"Echo",
-    Data:{Name:"string"}
+    Method:"Login",
+    Data:{
+        Login:login,
+        Password:password
+    }
   });
 
     // 1. Создаём новый объект XMLHttpRequest
