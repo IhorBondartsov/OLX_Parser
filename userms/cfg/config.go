@@ -18,7 +18,7 @@ var (
 	// userms
 	UserMS = MicroServices{
 		Port:"8001",
-		Host:"127.0.0.1",
+		Host:"http://127.0.0.1",
 		Prefix:"API",
 	}
 	Storage = SQL{
