@@ -11,6 +11,7 @@ import (
 	"github.com/IhorBondartsov/OLX_Parser/userms/cfg"
 	"github.com/IhorBondartsov/OLX_Parser/userms/storage/userSQL"
 	"github.com/IhorBondartsov/OLX_Parser/userms/webrpc"
+	"time"
 )
 
 var log = logrus.New()
@@ -34,6 +35,7 @@ func main() {
 		AccessPrivateKey: []byte(cfg.PrivateKey),
 		UserStor:         userStor,
 		RefreshStor:      tokenStor,
+		TTLAccessToken:   time.Duration(cfg.TTLAcessToken) * time.Second,
 	}
 	webrpc.Start(apiCfg)
 

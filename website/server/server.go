@@ -114,6 +114,10 @@ func UserMS(w http.ResponseWriter, req *http.Request) {
 			log.Errorf("[Server][UserMS] Err %v", err)
 		}
 	}
+	if err != nil{
+		w.Write([]byte(err.Error()))
+		return
+	}
 	w.WriteHeader(http.StatusOK)
 	w.Write(bodyResp)
 }
@@ -174,6 +178,10 @@ func ParserMS(w http.ResponseWriter, req *http.Request) {
 		if err != nil {
 			log.Errorf("[Server][UserMS] Err %v", err)
 		}
+	}
+	if err != nil{
+		w.Write([]byte(err.Error()))
+		return
 	}
 
 	w.WriteHeader(http.StatusOK)

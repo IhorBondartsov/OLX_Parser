@@ -15,6 +15,7 @@ import (
 	"github.com/IhorBondartsov/OLX_Parser/userms/storage"
 	"github.com/powerman/rpc-codec/jsonrpc2"
 	"github.com/sirupsen/logrus"
+	"github.com/go-errors/errors"
 )
 
 const letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -49,6 +50,7 @@ func NewAPI(cfg CfgAPI) *API {
 		AccessTokenSigner: ats,
 		UserStor:          cfg.UserStor,
 		RefreshStor:       cfg.RefreshStor,
+		TTLAccessToken:    cfg.TTLAccessToken,
 	}
 }
 
@@ -57,6 +59,7 @@ type CfgAPI struct {
 	AccessPrivateKey []byte
 	UserStor         storage.Storage
 	RefreshStor      storage.RefreshToken
+	TTLAccessToken    time.Duration
 }
 
 type API struct {
@@ -81,6 +84,10 @@ func (a *API) Login(req LoginReq, resp *LoginResp) error {
 		log.Errorf("[Login][GetUserByLogin] Error %v", err)
 		return err
 	}
+	if user.Password != req.Password{
+		log.Error("[Login][SetToken] Error Invalid login or pass")
+		return errors.New("Invalid login or pass")
+	}
 
 	token := randStringBytesRmndr(tokenLength)
 	t := time.Duration(cfg.TTLRefreshToken) * time.Second
@@ -94,6 +101,16 @@ func (a *API) Login(req LoginReq, resp *LoginResp) error {
 		log.Errorf("[Login][SetToken] Error %v", err)
 		return err
 	}
+
+	claim := jwtLib.Claims{
+		ID: strconv.Itoa(user.ID),
+	}
+	resp.AccessToken, err = a.AccessTokenSigner.Sign(claim, a.TTLAccessToken)
+	if err != nil {
+		log.Errorf("[Login][SetToken] Cant sign. Error %v", err)
+		return err
+	}
+
 	resp.RefreshToken = token
 	return err
 }

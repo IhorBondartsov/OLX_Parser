@@ -46,7 +46,7 @@ func (m *mailer) SendMail(adverts []entities.Advertisement, Mail string) error {
 func (m *mailer) GenerateBody(adverts []entities.Advertisement) string {
 	var message string
 	for k, v := range adverts {
-		message = message + fmt.Sprintf("%d - <b>%v</b>  <a href=\"%v\" style=\"color: #7f8fa4; text-decoration: underline;\">[click here]</a>!", k, v.Title, v.URL)
+		message = message + fmt.Sprintf("%d - <b>%v</b>  <a href=\"%v\" style=\"color: #7f8fa4; text-decoration: underline;\">[click here]</a>!</br>", k, v.Title, v.URL)
 	}
 	return message
 }

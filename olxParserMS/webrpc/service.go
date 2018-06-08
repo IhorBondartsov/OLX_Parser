@@ -57,10 +57,10 @@ func (a *API) Echo(req EchoReq, res *EchoRes) error {
 
 // MakeOrder - make row to db
 func (a *API) MakeOrder(req MakeOrderReq, res *MakeOrderRes) error {
-	//_, err := a.AccessTokenParser.Parse(req.Token)
-	//if err != nil {
-	//	return err
-	//}
+	_, err := a.AccessTokenParser.Parse(req.Token)
+	if err != nil {
+		return err
+	}
 
 	order := entities.Order{
 		Mail: req.Mail,
