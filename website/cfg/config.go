@@ -1,7 +1,7 @@
 package cfg
 
 const (
-	Route = "127.0.0.1"
+	Route = "0.0.0.0"
 	Port  = 8000
 )
 
