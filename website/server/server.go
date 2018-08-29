@@ -5,9 +5,11 @@ import (
 	"fmt"
 	"net/http"
 	"time"
+	"os"
 
 	"github.com/sirupsen/logrus"
 	"github.com/gorilla/mux"
+
 )
 var log = logrus.New()
 
@@ -32,7 +34,7 @@ func NewServer(cfg CfgServer) *server {
 }
 
 // Start - start http server
-func (s *server) Start() {
+func (s *server) Start(){
 	r := mux.NewRouter()
 	r.HandleFunc("/info", Info).Methods("GET")
 
@@ -48,6 +50,7 @@ func (s *server) Start() {
 	log.Infof("Server Start on %v", addr)
 	log.Fatal(srv.ListenAndServe())
 }
+
 
 func Info(w http.ResponseWriter, req *http.Request) {
 	log.Info("Hello world!")
