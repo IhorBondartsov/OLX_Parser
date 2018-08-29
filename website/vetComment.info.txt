@@ -1,0 +1,44 @@
+-----------------
+STATICCHECK :
+GOSIMPLE :
+Going into directory cfg
+-----------------
+cfg
+VET :
+LINT :
+cfg/config.go:4:2: exported const Route should have comment (or a comment on this block) or be unexported
+cfg/config.go:8:6: exported type MicroServices should have comment or be unexported
+cfg/config.go:15:2: comment on exported var UserMS should be of the form "UserMS ..."
+cfg/config.go:22:2: exported var ParserMS should have comment or be unexported
+Going into directory cmd
+-----------------
+cmd
+VET :
+LINT :
+Going into directory entity
+-----------------
+entity
+VET :
+LINT :
+entity/entity.go:4:6: exported type EchoReq should have comment or be unexported
+entity/entity.go:8:6: exported type EchoRes should have comment or be unexported
+entity/entity.go:12:6: exported type LoginReq should have comment or be unexported
+entity/entity.go:17:6: exported type LoginResp should have comment or be unexported
+entity/entity.go:22:6: exported type AcessTokenRequest should have comment or be unexported
+entity/entity.go:26:6: exported type AcessTokenResponse should have comment or be unexported
+entity/entity.go:30:6: exported type MakeOrderReq should have comment or be unexported
+entity/entity.go:40:6: exported type MakeOrderRes should have comment or be unexported
+entity/entity.go:43:6: exported type ShowAllOderReq should have comment or be unexported
+entity/entity.go:47:6: exported type ShowAllOderResp should have comment or be unexported
+entity/entity.go:51:6: exported type GetAdvertisementByOrderReq should have comment or be unexported
+entity/entity.go:56:6: exported type GetAdvertisementByOrderResp should have comment or be unexported
+entity/entity.go:60:6: exported type Advertisement should have comment or be unexported
+entity/entity.go:68:6: exported type Order should have comment or be unexported
+Going into directory server
+-----------------
+server
+VET :
+LINT :
+server/server.go:27:31: exported func NewServer returns unexported type *server.server, which can be annoying to use
+server/server.go:52:1: exported function Info should have comment or be unexported
+server/server.go:57:6: exported type Request should have comment or be unexported
