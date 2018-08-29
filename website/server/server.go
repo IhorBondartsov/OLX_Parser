@@ -9,7 +9,6 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/gorilla/mux"
 )
-
 var log = logrus.New()
 
 // server - create new server

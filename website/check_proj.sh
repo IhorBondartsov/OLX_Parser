@@ -1,17 +1,30 @@
 #!/usr/bin/env bash
 
-PROJPATH=$GOPATH/github.com/IhorBondartsov/OLX_Parser/website
+PROJPATH=$(pwd)
 # folder where we save vet input
-VFName="vetComment.info.txt"
+VFName=$PROJPATH/"vetComment.info.txt"
+vendorFolder="vendor"
+viewFolder="view"
 
 # integration test
+echo "==== START TESTING ===="
 go test --tags=integration ./...
 
-# find all directs in parents fold
-dircts=`find * -maxdepth 0 -type d`
-for addr in $dircts
-    do
-        touch $VFName
-        echo "-------------------------------"$addr"------------------------------------------" >> $VFName
-        go tool vet $addr >> $VFName
+recsearch(){
+    for i in `find * -maxdepth 0 -type d`
+        do
+        if [ -d $i ] && [ $i != $vendorFolder ] && [ $i != $viewFolder ]
+            then
+                echo "Going into directory $i"
+                echo "-----------------" >> $VFName
+                echo `pwd` >> $VFName
+                echo "-----------------" >> $VFName
+                go tool vet $i/*.go >> $VFName
+                cd $i
+                recsearch
+                cd ..
+        fi
     done
+}
+
+recsearch
