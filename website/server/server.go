@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net/http"
 	"time"
-	"os"
 
 	"github.com/sirupsen/logrus"
 	"github.com/gorilla/mux"
